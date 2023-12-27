@@ -7,7 +7,7 @@ type CardContainerProps = {
 }
 export default function CardContainer({ horses }: CardContainerProps) {
   return (
-    <section className="py-[4rem] flex flex-wrap justify-center gap-2 border overflow-hidden w-max h-screen">
+    <section className="col-span-full lg:col-span-4 py-[4rem] flex flex-wrap  justify-center gap-2 border">
       {
         horses.map((horse) => (
           <Fragment key={horse.id}>
