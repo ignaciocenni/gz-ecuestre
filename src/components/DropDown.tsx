@@ -1,25 +1,66 @@
 'use client'
-type Breed = {
-  name: string
+import { FaChevronDown } from "react-icons/fa"
+import { useState, useRef, useEffect } from 'react'
+import { usePathname, useSearchParams, useRouter } from 'next/navigation'
+import clsx from "clsx"
+
+type Option = {
+  name: string,
   id: number
 }
 
 type DropDownProps = {
-  options: Breed[]
-  name: string
+  name: string,
+  options: Option[]
 }
 
 export default function DropDown({ name, options }: DropDownProps) {
+  const searchParams = useSearchParams()
+  const currentOption = options.find((option) => String(option.id) === searchParams.get(name))
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [selectedOption, setSelectedOption] = useState<string | Option>(currentOption?.name || name)
+  const dropdownRef = useRef<HTMLDivElement | null>(null)
+
+  const handleDropdownToggle = () => {
+    setIsDropdownOpen(!isDropdownOpen)
+  }
+
+  const handleOutsideClick = (e: MouseEvent) => {
+    if (dropdownRef.current && e.target instanceof Node && !dropdownRef.current.contains(e.target)) {
+      setIsDropdownOpen(false)
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('click', handleOutsideClick)
+    return () => {
+      document.removeEventListener('click', handleOutsideClick)
+    }
+  }, [])
+
   return (
-    <div className="dropdown dropdown-bottom">
-      <div tabIndex={0} role="button" className="btn m-1 capitalize w-full">{name}</div>
-      <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+    <div className="w-full" ref={dropdownRef}>
+      <button
+        className="py-1 relative flex justify-center items-center focus:outline-none  text-gray-600 rounded-xl focus:ring ring-gray-200 group"
+        onClick={handleDropdownToggle}
+      >
+        <p className="px-4">{typeof selectedOption === 'string' ? selectedOption : selectedOption.name} </p>
+        <FaChevronDown />
         {
-          options.map((breed) => (
-            <li key={breed.id}><a>{breed.name}</a></li>
-          ))
-        }
-      </ul>
+          isDropdownOpen &&
+          <div className='absolute left-0 top-full min-w-full w-max bg-white shadow-md mt-1 rounded z-10 '>
+            <ul className="text-left px-2 border rounded">
+              <li className="px-4 py-1 hover:bg-grey-100 border-b cursor-pointer" onClick={() => { }}>
+                Todas
+              </li>
+              {options.map((option) => (
+                <li key={option.id} className="px-4 py-1 hover:bg-grey-100 border-b cursor-pointer" onClick={() => { }}>
+                  {option.name}
+                </li>
+              ))}
+            </ul>
+          </div>}
+      </button>
     </div>
   )
 }
