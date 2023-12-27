@@ -1,19 +1,11 @@
 import CardContainer from "@/components/CardContainer"
-import { horses, breeds } from "./lib/data"
-import DropDown from "@/components/DropDown"
-import SearchBar from "@/components/SearchBar"
+import { horses } from "./lib/data"
 
 export default function Home() {
   return (
-    <main className="flex justify-center gap-2 h-screen">
-      <aside className="hidden py-5 lg:flex flex-col items-center  border w-[30rem]">
-        <SearchBar />
-        <DropDown options={breeds} name="razas" />
-        <DropDown options={breeds} name="color" />
-        <DropDown options={breeds} name="edad" />
-      </aside>
+    <main className="mt-[4rem] grid grid-cols-5 gap-5 ">
       <CardContainer horses={horses} />
-      <aside className="hidden lg:block border w-[15rem]">
+      <aside className="hidden h-screen lg:block border">
         ads
       </aside>
     </main>
