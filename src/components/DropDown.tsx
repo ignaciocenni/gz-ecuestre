@@ -39,9 +39,9 @@ export default function DropDown({ name, options }: DropDownProps) {
   }, [])
 
   return (
-    <div className="w-full" ref={dropdownRef}>
+    <div className="w-full text-xl" ref={dropdownRef}>
       <button
-        className="py-1 relative flex justify-center items-center focus:outline-none  text-gray-600 rounded-xl focus:ring ring-gray-200 group"
+        className="py-1 relative flex justify-center bg-blanco/50 px-2 outline items-center focus:outline-none  text-gray-600 rounded-xl focus:ring ring-gray-200 group"
         onClick={handleDropdownToggle}
       >
         <p className="px-4">{typeof selectedOption === 'string' ? selectedOption : selectedOption.name} </p>
