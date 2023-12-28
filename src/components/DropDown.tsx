@@ -48,13 +48,13 @@ export default function DropDown({ name, options }: DropDownProps) {
         <FaChevronDown />
         {
           isDropdownOpen &&
-          <div className='absolute left-0 top-full min-w-full w-max bg-white shadow-md mt-1 rounded z-10 '>
+          <div className='absolute left-0 top-full min-w-full w-max bg-blanco shadow-md mt-1 rounded z-10 '>
             <ul className="text-left px-2 border rounded">
-              <li className="px-4 py-1 hover:bg-grey-100 border-b cursor-pointer" onClick={() => { }}>
+              <li className="px-4 py-1 hover:bg-gris/50  border-b cursor-pointer" onClick={() => { }}>
                 Todas
               </li>
               {options.map((option) => (
-                <li key={option.id} className="px-4 py-1 hover:bg-grey-100 border-b cursor-pointer" onClick={() => { }}>
+                <li key={option.id} className="px-4 py-1 hover:bg-gris/50 border-b cursor-pointer" onClick={() => { }}>
                   {option.name}
                 </li>
               ))}
