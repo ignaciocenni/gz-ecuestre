@@ -1,9 +1,8 @@
 'use client'
 import { FaChevronDown } from "react-icons/fa"
 import { useState, useRef, useEffect } from 'react'
-import { usePathname, useSearchParams, useRouter } from 'next/navigation'
-import clsx from "clsx"
-
+import { useSearchParams } from 'next/navigation'
+import { useFilters } from "@/lib/hooks"
 type Option = {
   name: string,
   id: number
@@ -20,6 +19,8 @@ export default function DropDown({ name, options }: DropDownProps) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [selectedOption, setSelectedOption] = useState<string | Option>(currentOption?.name || name)
   const dropdownRef = useRef<HTMLDivElement | null>(null)
+
+  const { setFilter, deleteFilter } = useFilters()
 
   const handleDropdownToggle = () => {
     setIsDropdownOpen(!isDropdownOpen)
@@ -50,11 +51,11 @@ export default function DropDown({ name, options }: DropDownProps) {
           isDropdownOpen &&
           <div className='absolute left-0 top-full min-w-full w-max bg-blanco shadow-md mt-1 rounded z-10 '>
             <ul className="text-left px-2">
-              <li className="px-4 py-1 hover:bg-gris/50  border-b cursor-pointer" onClick={() => { }}>
+              <li className="px-4 py-1 hover:bg-gris/50  border-b cursor-pointer" onClick={() => deleteFilter({ name })}>
                 Todas
               </li>
               {options.map((option) => (
-                <li key={option.id} className="px-4 py-1 hover:bg-gris/50 border-b cursor-pointer" onClick={() => { }}>
+                <li key={option.id} className="px-4 py-1 hover:bg-gris/50 border-b cursor-pointer" onClick={() => setFilter({ name, value: option.name })}>
                   {option.name}
                 </li>
               ))}

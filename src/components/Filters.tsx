@@ -1,7 +1,7 @@
 import DropDown from "./DropDown";
 import SearchBar from "./SearchBar"
-import { breeds } from "@/app/lib/data"
-import FilterBadge from "./FilterBadges";
+import { breeds } from "@/lib/data"
+import FilterBadgesContainer from "./FilterBadgesContainer";
 
 export default function Filters() {
   return (
@@ -13,12 +13,7 @@ export default function Filters() {
         <li><DropDown options={breeds} name="Edad" /></li>
       </ul>
       <br />
-      <section className="flex flex-wrap gap-2">
-        <FilterBadge>Raza</FilterBadge>
-        <FilterBadge>Color</FilterBadge>
-        <FilterBadge>Edad</FilterBadge>
-        <FilterBadge>Query</FilterBadge>
-      </section>
+      <FilterBadgesContainer />
     </article>
   )
 }
