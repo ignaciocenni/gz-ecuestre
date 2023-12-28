@@ -18,7 +18,6 @@ export default function Drawer() {
         className="relative sr-only peer"
         type="checkbox"
         id="toggle"
-        checked={isOpen}
       />
       <label
         htmlFor="toggle"
