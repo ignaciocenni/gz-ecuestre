@@ -27,11 +27,11 @@ export default function SearchBar() {
         onChange={handleChange}
         type="text"
         placeholder="Buscar"
-        className=" w-full max-w-xs px-2 py-1 rounded-lg focus:outline-none"
+        className="bg-blanco w-full max-w-xs px-2 py-1 rounded-lg focus:outline-none"
         value={query}
       />
       <button
-        className="rounded-lg bg-gris px-2 py-1 h-[2.3rem]"
+        className="rounded-lg bg-blanco text-gray-600 px-2 py-1 h-[2.3rem]"
         type="submit"
       >
         <FiSearch />

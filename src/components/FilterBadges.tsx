@@ -4,13 +4,15 @@ export default function FilterBadge({ name, value }: { name: string, value: stri
   const { deleteFilter } = useFilters()
   return (
     <div
-      className=" text-xs flex items-center justify-center gap-2 px-2  bg-blanco/50 border-2 border-negro rounded-full capitalize">
+      className="text-xs font-bold flex items-center justify-center gap-2 px-2 pr-0  bg-orange-100 border-2 border-amber-700 text-gray-600 rounded-full capitalize">
       {value}
       <button
         className="text-2xl"
         onClick={() => deleteFilter({ name })}
       >
-        <IoIosCloseCircle />
+        <div className="text-amber-700">
+          <IoIosCloseCircle />
+        </div>
       </button>
     </div>
   )
