@@ -1,10 +1,25 @@
+'use client'
 import { FcMenu } from "react-icons/fc";
 import Filters from "./Filters";
+import { useState } from 'react'
+import clsx from "clsx"
 
 export default function Drawer() {
+
+  const [isOpen, setIsOpen] = useState<boolean>(false)
+
   return (
-    <section className="text-negro text-4xl">
-      <input type="checkbox" id="toggle" className="relative sr-only peer" />
+    <section
+      className={clsx(`*:text-negro text-4xl fixed inset-0`
+        , { 'bg-black/30 backdrop-blur-sm': isOpen === true }
+      )}>
+      <input
+        onChange={(e) => setIsOpen(e.target.checked)}
+        className="relative sr-only peer"
+        type="checkbox"
+        id="toggle"
+        checked={isOpen}
+      />
       <label
         htmlFor="toggle"
         className={`active:scale-110 peer-checked:-rotate-90  
