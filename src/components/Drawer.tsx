@@ -13,7 +13,7 @@ export default function Drawer() {
         <CiMenuBurger />
       </label>
       <div
-        className={`mt-[4rem] top-0 absolute h-screen bg-marron -left-[25rem] 
+        className={`mt-[4.56rem] top-0 absolute h-screen bg-marron -left-[25rem] 
          peer-checked:left-0 peer:transition ease-out delay-150 duration-300    
         `}
       >
