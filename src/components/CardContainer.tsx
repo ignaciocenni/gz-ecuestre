@@ -1,6 +1,6 @@
 import Card from "./Card"
 import { Fragment } from "react"
-import { type Horse } from "@/app/lib/types"
+import { type Horse } from "@/lib/types"
 
 type CardContainerProps = {
   horses: Horse[]

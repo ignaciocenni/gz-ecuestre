@@ -1,5 +1,5 @@
 import CardContainer from "@/components/CardContainer"
-import { horses } from "./lib/data"
+import { horses } from "../lib/data"
 
 export default function Home() {
   return (

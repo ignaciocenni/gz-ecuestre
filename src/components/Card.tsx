@@ -1,4 +1,4 @@
-import { type Horse } from "@/app/lib/types"
+import { type Horse } from "@/lib/types"
 import Image from "next/image"
 import CardBadge from "./CardBadge"
 
