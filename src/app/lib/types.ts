@@ -3,4 +3,5 @@ export type Horse = {
   name: string
   breed: string
   age: number
+  sex: string
 }

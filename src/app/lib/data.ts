@@ -3,25 +3,29 @@ export const horses = [
     id: 'rp5',
     name: 'Relámpago',
     breed: 'Pura Sangre',
-    age: 5
+    age: 5,
+    sex: 'Macho'
   },
   {
     id: 'ea7',
     name: 'Esmeralda',
     breed: 'Árabe',
-    age: 7
+    age: 7,
+    sex: 'Hembra'
   },
   {
     id: 'ca4',
     name: 'Centella',
     breed: 'Appaloosa',
-    age: 4
+    age: 4,
+    sex: 'Macho'
   },
   {
     id: 'rt6',
     name: 'Rayo',
     breed: 'Trotón Francés',
-    age: 6
+    age: 6,
+    sex: 'Macho'
   }
 ]
 
