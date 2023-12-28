@@ -5,7 +5,9 @@ export default function NavBar() {
   return (
     <nav
       className={`top-0 bg-blanco flex items-center
-         fixed  h-[4.7rem] text-2xl shadow-xl  w-screen`}>
+         fixed  h-[4.5rem] text-2xl shadow-xl  w-screen
+         
+         `}>
       <Drawer />
       <section
         className="flex items-center justify-between  w-full ml-[3rem] mr-[2rem]"
