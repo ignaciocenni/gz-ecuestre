@@ -1,13 +1,12 @@
 import { CiMenuBurger } from "react-icons/ci";
-import { IoCloseCircle } from "react-icons/io5";
-
 import Filters from "./Filters";
 
 export default function Drawer() {
   return (
     <section className="text-negro text-4xl ">
-      <input type="checkbox" id='toggle' className="relative sr-only peer" />
-      <label htmlFor="toggle"
+      <input type="checkbox" id="toggle" className="relative sr-only peer" />
+      <label
+        htmlFor="toggle"
         className={`active:scale-110 peer-checked:-rotate-90  
         transition-transform absolute top-3 delay-150 duration-300`}
       >
@@ -20,7 +19,6 @@ export default function Drawer() {
       >
         <Filters />
       </div>
-
     </section>
-  )
+  );
 }
