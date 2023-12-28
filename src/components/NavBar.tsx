@@ -3,13 +3,27 @@ import Drawer from "./Drawer";
 
 export default function NavBar() {
   return (
-    <>
-      <nav className="top-0 bg-blanco flex justify-around items-center fixed  h-[4.7rem] text-2xl shadow-xl border w-screen">
-        <Drawer />
-        <Image src="/text-logo.png" alt="Logo" width={170} height={170} quality={100} className=" border-red-900 border" />
-        {/*<h1 className="text-marron">GZ ECUESTRE</h1>*/}
-        <Image src="/logo.png" alt="Logo" width={50} height={50} quality={100} className=" border-red-900 border" />
-      </nav>
-    </>
+    <nav
+      className={`top-0 bg-blanco flex items-center
+         fixed  h-[4.7rem] text-2xl shadow-xl  w-screen`}>
+      <Drawer />
+      <section
+        className="flex items-center justify-between  w-full ml-[3rem] mr-[2rem]"
+      >
+        <div />
+        <Image
+          src="/text-logo.png"
+          alt="Logo"
+          width={170}
+          height={170}
+          quality={100}
+        />
+        <Image
+          src="/logo.png"
+          alt="Logo" width={50}
+          height={50} quality={100}
+        />
+      </section>
+    </nav>
   );
 }
