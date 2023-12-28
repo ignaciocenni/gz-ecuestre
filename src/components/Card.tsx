@@ -16,11 +16,11 @@ export default function Card({ horse }: CardProps) {
         height={400}
         quality={100}
       />
-      <h2 className="mt-4">{horse.name}</h2>
-      <div className="flex gap-4 justify-center">
+      <h2 className="mt-4 text-sm font-thin">{horse.name}</h2>
+      <section className="flex gap-4 justify-center">
         <h3 className="badge">{horse.breed}</h3>
         <div className="badge">{horse.age}</div>
-      </div>
+      </section>
     </article>
   )
 }
