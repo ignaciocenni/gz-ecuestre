@@ -1,5 +1,5 @@
 'use client'
-import { CiSearch } from "react-icons/ci"
+import { FiSearch } from "react-icons/fi"
 import { useFilters } from "@/lib/hooks"
 import { useState } from 'react'
 
@@ -34,7 +34,7 @@ export default function SearchBar() {
         className="rounded-lg bg-gris px-2 py-1 h-[2.3rem] outline"
         type="submit"
       >
-        <CiSearch />
+        <FiSearch />
       </button>
     </form>
   )
