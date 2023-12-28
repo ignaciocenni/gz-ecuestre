@@ -8,7 +8,7 @@ type CardProps = {
 
 export default function Card({ horse }: CardProps) {
   return (
-    <article className="flex flex-col mt-[2rem]  text-gris rounded-xl gap-1 text-center h-[20rem] w-[14rem] bg-blanco shadow-xl overflow-hidden">
+    <article className="flex flex-col  text-gris rounded-xl gap-1 text-center h-[20rem] w-[14rem] bg-blanco shadow-xl overflow-hidden">
       <Image
         className="w-full h-[9rem]"
         src={'/caballo.jpg'}
