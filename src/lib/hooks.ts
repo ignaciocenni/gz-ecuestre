@@ -1,8 +1,7 @@
 import { useSearchParams, useRouter, usePathname } from 'next/navigation'
+import { useState, useEffect, useRef } from 'react'
 
 export const useFilters = () => {
-  // funcion para setear params
-  // funcion para eliminar params
   const searchParams = useSearchParams()
   const params = new URLSearchParams(searchParams)
   const { replace } = useRouter()
@@ -30,5 +29,31 @@ export const useFilters = () => {
     setFilter,
     deleteFilter,
     getSearchParams
+  }
+}
+
+export const useDropDown = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement | null>(null)
+  const handleDropdownToggle = () => {
+    setIsDropdownOpen(!isDropdownOpen)
+  }
+
+  const handleOutsideClick = (e: MouseEvent) => {
+    if (dropdownRef.current && e.target instanceof Node && !dropdownRef.current.contains(e.target)) {
+      setIsDropdownOpen(false)
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('click', handleOutsideClick)
+    return () => {
+      document.removeEventListener('click', handleOutsideClick)
+    }
+  }, [])
+  return {
+    isDropdownOpen,
+    handleDropdownToggle,
+    dropdownRef
   }
 }

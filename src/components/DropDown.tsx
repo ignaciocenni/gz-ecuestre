@@ -1,8 +1,10 @@
 'use client'
 import { FaChevronDown } from "react-icons/fa"
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { useFilters } from "@/lib/hooks"
+import { useDropDown } from "@/lib/hooks"
+
 type Option = {
   name: string,
   id: number
@@ -16,28 +18,10 @@ type DropDownProps = {
 export default function DropDown({ name, options }: DropDownProps) {
   const searchParams = useSearchParams()
   const currentOption = options.find((option) => String(option.id) === searchParams.get(name))
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-  const [selectedOption, setSelectedOption] = useState<string | Option>(currentOption?.name || name)
-  const dropdownRef = useRef<HTMLDivElement | null>(null)
+  const [selectedOption] = useState<string | Option>(currentOption?.name || name)
 
+  const { dropdownRef, handleDropdownToggle, isDropdownOpen } = useDropDown()
   const { setFilter, deleteFilter } = useFilters()
-
-  const handleDropdownToggle = () => {
-    setIsDropdownOpen(!isDropdownOpen)
-  }
-
-  const handleOutsideClick = (e: MouseEvent) => {
-    if (dropdownRef.current && e.target instanceof Node && !dropdownRef.current.contains(e.target)) {
-      setIsDropdownOpen(false)
-    }
-  }
-
-  useEffect(() => {
-    document.addEventListener('click', handleOutsideClick)
-    return () => {
-      document.removeEventListener('click', handleOutsideClick)
-    }
-  }, [])
 
   return (
     <div className="w-full text-xl" ref={dropdownRef}>
