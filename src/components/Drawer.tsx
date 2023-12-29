@@ -31,7 +31,7 @@ export default function Drawer() {
         className="border -z-10 h-full w-full"
         onClick={() => setIsOpen(!isOpen)} />}
       <div
-        className={`mt-[4.56rem] top-0 absolute h-screen bg-orange-200 -left-[25rem] xl:left-0
+        className={`mt-[4.56rem] rounded-lg overflow-hidden top-0 absolute h-screen xl:h-1/2 bg-orange-200 -left-[25rem] xl:left-0
         peer-checked:left-0 peer:transition ease-out delay-150 duration-300 shadow-xl  
         `}
       >
