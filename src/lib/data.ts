@@ -26,6 +26,118 @@ export const horses = [
     breed: 'Trotón Francés',
     age: 6,
     sex: 'Macho'
+  },
+  {
+    id: 'ab8',
+    name: 'Azabache',
+    breed: 'Andaluz',
+    age: 8,
+    sex: 'Macho'
+  },
+  {
+    id: 'ma3',
+    name: 'Mariposa',
+    breed: 'Mustang',
+    age: 3,
+    sex: 'Hembra'
+  },
+  {
+    id: 'na5',
+    name: 'Nube',
+    breed: 'Frisón',
+    age: 5,
+    sex: 'Hembra'
+  },
+  {
+    id: 'sa4',
+    name: 'Sable',
+    breed: 'Shire',
+    age: 4,
+    sex: 'Macho'
+  },
+  {
+    id: 'li6',
+    name: 'Lluvia',
+    breed: 'Lipizzan',
+    age: 6,
+    sex: 'Hembra'
+  },
+  {
+    id: 'do2',
+    name: 'Dorado',
+    breed: 'Dales',
+    age: 2,
+    sex: 'Macho'
+  },
+  {
+    id: 'th7',
+    name: 'Thunder',
+    breed: 'Thoroughbred',
+    age: 7,
+    sex: 'Macho'
+  },
+  {
+    id: 'wi4',
+    name: 'Wind',
+    breed: 'Clydesdale',
+    age: 4,
+    sex: 'Hembra'
+  },
+  {
+    id: 'st5',
+    name: 'Storm',
+    breed: 'Standardbred',
+    age: 5,
+    sex: 'Macho'
+  },
+  {
+    id: 'qu3',
+    name: 'Quasar',
+    breed: 'Quarter Horse',
+    age: 3,
+    sex: 'Hembra'
+  },
+  {
+    id: 'sp6',
+    name: 'Spark',
+    breed: 'Spanish Mustang',
+    age: 6,
+    sex: 'Macho'
+  },
+  {
+    id: 'su4',
+    name: 'Sunrise',
+    breed: 'Suffolk Punch',
+    age: 4,
+    sex: 'Hembra'
+  },
+  {
+    id: 'ch5',
+    name: 'Champion',
+    breed: 'Cleveland Bay',
+    age: 5,
+    sex: 'Macho'
+  },
+  {
+    id: 'br7',
+    name: 'Breeze',
+    breed: 'Brabant',
+    age: 7,
+    sex: 'Hembra'
+  },
+  {
+    id: 'gl4',
+    name: 'Glacier',
+    breed: 'Gypsy Vanner',
+    age: 4,
+    sex: 'Macho'
+  },
+  {
+    id: 'wi8',
+    name: 'Winter',
+    breed: 'Welsh Pony',
+    age: 8,
+    sex: 'Hembra'
   }
 ]
 
