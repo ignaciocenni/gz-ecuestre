@@ -1,6 +1,7 @@
 import CardContainer from "@/components/CardContainer"
 import { horses } from "../lib/data"
 import Footer from "@/components/Footer"
+import Pagination from "@/components/Pagination"
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         <aside className="h-[15rem] xl:h-screen xl:w-[16rem] border">
           ads
         </aside>
+        <Pagination />
         <CardContainer horses={horses} />
       </section>
       <Footer />
