@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --pagination-bg: #fed7aa;
+  --pagination-active-bg: #d97706;
+  --pagination-active-color: #450a0a;
+  --pagination-color: #450a0a;
+  --pagination-hover-bg: #fb923c;
+  --pagination-hover-color: #450a0a;
+}
