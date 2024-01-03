@@ -2,7 +2,7 @@
 import { FaChevronDown } from "react-icons/fa"
 import { useState } from 'react'
 import { useSearchParams } from 'next/navigation'
-import { useFilters } from "@/lib/hooks"
+import { useUrlSearchParams } from "@/lib/hooks"
 import { useDropDown } from "@/lib/hooks"
 
 type Option = {
@@ -21,7 +21,7 @@ export default function DropDown({ name, options }: DropDownProps) {
   const [selectedOption] = useState<string | Option>(currentOption?.name || name)
 
   const { dropdownRef, handleDropdownToggle, isDropdownOpen } = useDropDown()
-  const { setFilter, deleteFilter } = useFilters()
+  const { setFilter, deleteFilter } = useUrlSearchParams()
 
   return (
     <div className="w-full text-xl" ref={dropdownRef}>
@@ -39,7 +39,9 @@ export default function DropDown({ name, options }: DropDownProps) {
                 Todas
               </li>
               {options.map((option) => (
-                <li key={option.id} className="px-4 py-1 hover:bg-gris/50 border-b cursor-pointer" onClick={() => setFilter({ name, value: option.name })}>
+                <li key={option.id}
+                  className="px-4 py-1 hover:bg-gris/50 border-b cursor-pointer"
+                  onClick={() => setFilter({ name, value: option.name })}>
                   {option.name}
                 </li>
               ))}

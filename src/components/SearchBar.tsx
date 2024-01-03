@@ -1,11 +1,11 @@
 'use client'
 import { FiSearch } from "react-icons/fi"
-import { useFilters } from "@/lib/hooks"
+import { useUrlSearchParams } from "@/lib/hooks"
 import { useState } from 'react'
 
 export default function SearchBar() {
 
-  const { setFilter } = useFilters()
+  const { setFilter } = useUrlSearchParams()
   const [query, setQuery] = useState<string>('')
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

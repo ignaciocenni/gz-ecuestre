@@ -1,7 +1,7 @@
 import { useSearchParams, useRouter, usePathname } from 'next/navigation'
 import { useState, useEffect, useRef } from 'react'
 
-export const useFilters = () => {
+export const useUrlSearchParams = () => {
   const searchParams = useSearchParams()
   const params = new URLSearchParams(searchParams)
   const { replace } = useRouter()
@@ -25,10 +25,16 @@ export const useFilters = () => {
     return result
   }
 
+  const setPage = (value: number) => {
+    params.set('page', String(value))
+    replace(`${path}?${params.toString()}`)
+  }
+
   return {
     setFilter,
     deleteFilter,
-    getSearchParams
+    getSearchParams,
+    setPage
   }
 }
 

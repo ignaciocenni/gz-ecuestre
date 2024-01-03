@@ -10,9 +10,9 @@ export default function Home() {
         <aside className="h-[15rem] xl:h-screen xl:w-[16rem] border">
           ads
         </aside>
-        {/* <Pagination /> */}
         <CardContainer horses={horses} />
       </section>
+      <Pagination />
       <Footer />
     </main>
   )

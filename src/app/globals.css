@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --pagination-bg: #fed7aa;
-  --pagination-active-bg: #d97706;
+  --pagination-bg: rgb(255 251 246 / 0.5);
+  --pagination-active-bg: #fdba74;
   --pagination-active-color: #450a0a;
   --pagination-color: #450a0a;
   --pagination-hover-bg: #fb923c;
