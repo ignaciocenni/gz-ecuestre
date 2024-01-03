@@ -1,6 +1,6 @@
 'use client'
 import { FcMenu } from "react-icons/fc";
-import Filters from "./Filters";
+import Filters from "../filters/Filters";
 import { useState } from 'react'
 import clsx from "clsx"
 

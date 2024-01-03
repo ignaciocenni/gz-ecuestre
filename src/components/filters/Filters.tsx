@@ -1,5 +1,5 @@
-import DropDown from "./DropDown";
-import SearchBar from "./SearchBar"
+import DropDown from "../ui/DropDown";
+import SearchBar from "../SearchBar"
 import { breeds } from "@/lib/data"
 import FilterBadgesContainer from "./FilterBadgesContainer";
 

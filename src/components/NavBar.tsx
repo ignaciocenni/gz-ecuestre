@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Drawer from "./Drawer";
+import Drawer from "./ui/Drawer";
 
 export default function NavBar() {
   return (
