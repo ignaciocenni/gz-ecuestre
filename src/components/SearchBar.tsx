@@ -10,6 +10,7 @@ export default function SearchBar() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    if (query === '') return
     setFilter({ name: 'Query', value: query })
     setQuery('')
   }

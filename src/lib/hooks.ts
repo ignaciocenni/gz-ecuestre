@@ -17,15 +17,17 @@ export const useUrlSearchParams = () => {
     replace(`${path}?${params.toString()}`)
   }
 
-  const getSearchParams = () => {
+  const getActiveFilters = () => {
     const result = []
     for (const [key, value] of searchParams.entries()) {
-      result.push({ name: key, value })
+      if (key !== 'page') {
+        result.push({ name: key, value })
+      }
     }
     return result
   }
 
-  const setPage = (value: number) => {
+  const setPage = (value: number | string) => {
     params.set('page', String(value))
     replace(`${path}?${params.toString()}`)
   }
@@ -33,7 +35,7 @@ export const useUrlSearchParams = () => {
   return {
     setFilter,
     deleteFilter,
-    getSearchParams,
+    getActiveFilters,
     setPage
   }
 }
