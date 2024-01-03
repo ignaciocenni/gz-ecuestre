@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Drawer from "./ui/Drawer";
+import Link from "next/link";
 
 export default function NavBar() {
   return (
@@ -20,11 +21,14 @@ export default function NavBar() {
           height={170}
           quality={100}
         />
-        <Image
-          src="/logo.png"
-          alt="Logo" width={50}
-          height={50} quality={100}
-        />
+        <Link
+          href={'/'}>
+          <Image
+            src="/logo.png"
+            alt="Logo" width={50}
+            height={50} quality={100}
+          />
+        </Link>
       </section>
     </nav>
   );
